@@ -1,0 +1,107 @@
+<?php
+//start buffering
+ob_start();
+$from = getcwd();
+$to = "/Volumes/UCFSsan31/Users/t/tellepet/Sites/css/style.css";
+$css = getRelativePath($from,$to);
+
+$to = "/Volumes/UCFSsan31/Users/t/tellepet/Sites/WebsiteResources/Banner.png";
+$banner = getRelativePath($from,$to);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        <?php
+            if (defined('TITLE')) {
+                print TITLE;
+            } else {
+                print 'Ilaris Unbound';
+            }
+        ?>
+    </title>
+    <?php echo "<LINK rel=\"stylesheet\" type=\"text/css\" href=\"$css\">" ?>
+    <?php
+        if (defined('CSS')) {
+            echo '<link rel="stylesheet" type="text/css" href="' . CSS . '">';
+        }
+    ?>
+</head>
+<body>
+<div id="header">
+    <div id="banner">
+        <a href="http://homepages.uc.edu/~tellepet/"><?php echo "<img width=\"254\" height=\"69\" src=\"$banner\">" ?></a>
+    </div>
+    <div id="login">
+        <?php
+            if (empty($_SESSION['email'])) {
+                print '<a id="loginLink" href="login.php">Log In</a>';
+            } else {
+                print '<p>Hello ' . $_SESSION['email'] . '</p>';
+                print '<a href="logout.php" id="logout">logout?</a> ';
+            }
+        ?>
+    </div>
+    <nav>
+        <div>
+            <a href="http://homepages.uc.edu/~tellepet/PHPAssignmentsPage.php">PHP Assignments</a>
+        </div><!--
+        --><div>
+            <a href="http://homepages.uc.edu/~tellepet/shop.php">Shop</a>
+        </div><!--
+        --><div>
+            <a href="http://homepages.uc.edu/~tellepet/rules.php">Rules</a>
+        </div><!--
+        --><div>
+            <a href="http://homepages.uc.edu/~tellepet/forum.php">Forum</a>
+        </div><!--
+        --><div>
+            <a href="http://homepages.uc.edu/~tellepet/lore.php">Lore</a>
+        </div><!--
+        --><div>
+            <a href="http://homepages.uc.edu/~tellepet/map.php">Map</a>
+        </div><!--
+    --></nav>
+    <div id="ip">
+        <h1>mc.agoncraft.net</h1>
+    </div>
+</div>
+<div id="content">
+
+
+    <?php
+    function getRelativePath($from, $to)
+    {
+    // some compatibility fixes for Windows paths
+    $from = is_dir($from) ? rtrim($from, '\/') . '/' : $from;
+    $to   = is_dir($to)   ? rtrim($to, '\/') . '/'   : $to;
+    $from = str_replace('\\', '/', $from);
+    $to   = str_replace('\\', '/', $to);
+
+    $from     = explode('/', $from);
+    $to       = explode('/', $to);
+    $relPath  = $to;
+
+    foreach($from as $depth => $dir) {
+    // find first non-matching dir
+    if($dir === $to[$depth]) {
+    // ignore this directory
+    array_shift($relPath);
+    } else {
+    // get number of remaining dirs to $from
+    $remaining = count($from) - $depth;
+    if($remaining > 1) {
+    // add traversals up to first matching dir
+    $padLength = (count($relPath) + $remaining - 1) * -1;
+    $relPath = array_pad($relPath, $padLength, '..');
+    break;
+    } else {
+    $relPath[0] = './' . $relPath[0];
+    }
+    }
+    }
+    return implode('/', $relPath);
+    }
+    ?>

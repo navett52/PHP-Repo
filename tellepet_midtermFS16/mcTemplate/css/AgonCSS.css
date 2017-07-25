@@ -1,0 +1,117 @@
+body {
+	background-image: url(../WebsiteResources/MCBackground.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	width: 90%;
+	margin: auto;
+}
+.header {
+	background: rgba(76, 76, 76, 0.7);
+	border: 2px solid black;
+	width: 90%;
+	margin: auto;
+}
+.middle {
+	width: 90%;
+	border-top: 0px;
+	border-bottom: 2px solid black;
+	border-right: 2px solid black;
+	border-left: 2px solid black;
+	background: rgba(76, 76, 76, 0.7);
+	margin: auto;
+}
+.banner {
+	width: 50%;
+	margin: auto;
+	display: inline-block;
+}
+.login {
+	width: 49%;
+	margin: auto;
+	display: inline-block;
+}
+.navigation {
+	width: 100%;
+}
+.navigation div {
+	display: inline-block;
+}
+.ip {
+	width: 100%;
+}
+#ip {
+	font-size: 36px;
+	margin: 0px;
+}
+
+/*For dropdown*/
+/* Dropdown Button */
+.dropbtn {
+	border: none;
+	cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	min-width: 160px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+	background-color: #3e8e41;
+}
+
+/*For forms*/
+form {
+	font-family: Arial, sans-serif;
+	padding: 10px;
+	width: 75%;
+}
+
+label {
+	float: left;
+	width: 100px;
+	clear: left;
+	text-align: right;
+	padding-right: 10px;
+	margin-top: 10px;
+}
+
+
+input, select {
+	margin-top: 10px;
+	display: inline;
+}
+
+checkbox {
+	margin-top: 10px;
+	display: inline;
+}
+
+#agree {display: inline; }
+
+submit { margin-right: 110px; }

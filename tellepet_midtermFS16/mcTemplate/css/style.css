@@ -1,0 +1,81 @@
+body {
+    background: url(../WebsiteResources/MCBackground.png) no-repeat fixed;
+    height: 100%;
+    font-family: sans-serif;
+    margin: auto;
+}
+
+#header {
+    width: 100%;
+    //overflow: hidden;
+    background-color: rgba(255,255,255,1);
+    //color: white;
+    position: fixed;
+    z-index: 2;
+}
+
+#header > * {
+    background-color: rgba(255,255,255,1);
+}
+
+#banner {
+    width: 254px;
+    height: 69px;
+    display: inline-block;
+    float: left;
+    //background-color: white;
+    padding: 11px;
+}
+
+/*Styles for the navigation bar*/
+nav {
+    //height: 91px;
+    //text-align: center;
+    //display: inline-block;
+}
+
+nav > div {
+    display: inline-block;
+    //background-color: white;
+    padding: 10px;
+    height: 100%;
+    text-align: center;
+}
+
+nav > div:hover {
+    background-color: lightgray;
+}
+
+#ip {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background-color: transparent;
+}
+
+/*Style for the login form*/
+#login {
+    text-align: right;
+    display: inline-block;
+    float: right;
+    //background-color: white;
+    padding: 10px;
+}
+
+#logout {
+    font-size: 10px;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    //background-color: rgba(0,0,0,.5);
+    color: white;
+    width: 15%;
+}
+
+#footer p {
+    margin-left: 10px;
+}

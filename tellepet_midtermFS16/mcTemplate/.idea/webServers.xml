@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b6198378-8be4-4ba4-96bc-2c2be1d7de8b" name="pushToUCFileSpace" url="http://ucfilespace.uc.edu">
+        <fileTransfer host="ucfilespace.uc.edu" port="22" rootFolder="/Volumes/UCFSsan31/Users/t/tellepet" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

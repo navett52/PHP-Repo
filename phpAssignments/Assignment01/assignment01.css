@@ -1,0 +1,25 @@
+body {
+    width: 700px;
+    padding: 50px;
+    background-color: darkslateblue;
+    margin: auto;
+    margin-top: 200px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 500px;
+    margin: auto;
+    background-color: darkgray;
+    padding: 20px;
+}
+
+p {
+    width: 500px;
+    margin: auto;
+    background-color: darkgray;
+    padding: 20px;
+}
